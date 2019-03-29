@@ -59,7 +59,7 @@ TEST(TestUtils, TestParseString) {
 
   const string s1{"\"basic_string\""},
                s2{"\"string with spaces\""},
-               s3{"\"string with\tescapes\n\t\""},
+               s3{R"("string with\tescapes\n\t")"},
                // s41: 这是一段中文
                // UTF-8: \xe8\xbf\x99\xe6\x98\xaf\xe4\xb8\x80\xe6\xae\xb5\xe4\xb8\xad\xe6\x96\x87
                s41{R"("\u8fd9\u662f\u4e00\u6bb5\u4e2d\u6587")"},

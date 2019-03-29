@@ -16,7 +16,7 @@ TEST(TestJson, TestParse) {
 
   const string valid_json_path{"../test/data/valid.json"};
   std::unique_ptr<JsonNode> valid_json_ptr = Json::parse(valid_json_path);
-  EXPECT_NE(valid_json_ptr, nullptr);
+  ASSERT_NE(valid_json_ptr, nullptr);
   EXPECT_DOUBLE_EQ((*valid_json_ptr)["\xe4\xb8\xad\xe6\x96\x87_key"].get_number(), 2.342534252342134);
   EXPECT_EQ((*valid_json_ptr)["key with space"][0].is_null(), true);
   EXPECT_EQ((*valid_json_ptr)["key with space"][1].get_bool(), true);
