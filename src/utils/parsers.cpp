@@ -18,8 +18,37 @@ namespace toy_json {
 bool parse_bool(std::string::const_iterator &str_it) {
   bool result = false;
   // TODO: implement parsing and advance iterator
-
+  if(str_it[0] == 't'){
+    if(str_it[1] == 'r'){
+      if(str_it[2] == 'u'){
+        if(str_it[3] == 'e'){
+          str_it += 4;
+          result = true;
+        }
+        throw std::runtime_error("parsing bool type failed");
+      }
+      throw std::runtime_error("parsing bool type failed");
+    }
+    throw std::runtime_error("parsing bool type failed");
+  }else if(str_it[0] == 'f'){
+    if(str_it[1] == 'a'){
+      if(str_it[2] == 'l'){
+        if(str_it[3] == 's'){
+          if(str_it[4] == 'e'){
+            str_it += 5;
+            result = false;
+          }
+          throw std::runtime_error("parsing bool type failed");
+        }
+        throw std::runtime_error("parsing bool type failed");
+      }
+      throw std::runtime_error("parsing bool type failed");
+    }
+  }else{
+    throw std::runtime_error("parsing bool type failed");
+  }
   return result;
+}
 }
 
 double parse_number(std::string::const_iterator &str_it) {
